@@ -80,7 +80,7 @@ for (let i = 0; i < parentSections.length; i++) {
 }
 
 var fileContent;
-const fileName = 'resources/' + (page == null ? 'home.html' : page + '/' + sectionPage + '.html');
+const fileName = 'https://lucratiff.github.io/resources/' + (page == null ? 'home.html' : page + '/' + sectionPage + '.html');
 const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if(request.readyState === 4 && (request.status === 200 || request.status == 0)) {

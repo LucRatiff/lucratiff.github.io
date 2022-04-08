@@ -70,8 +70,7 @@ if (page != null) {
     } catch(e) {}
 }
 
-let parentSections = document.getElementsByClassName("category");
-
+const parentSections = document.getElementsByClassName("category");
 for (let i = 0; i < parentSections.length; i++) {
     parentSections[i].addEventListener("click", function() {
         let nameId = parentSections[i].id;
@@ -83,8 +82,23 @@ const fileName = 'https://lucratiff.github.io/resources/' + (page == null ? 'hom
 const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if(request.readyState === 4 && (request.status === 200 || request.status == 0)) {
-        document.getElementById('main').innerHTML = request.responseText;
+        document.getElementById('content').innerHTML = request.responseText;
     }
 }
 request.open("GET", fileName);
 request.send();
+
+let burgerDeployed = false;
+function deployBurger() {
+    if (burgerDeployed) {
+        document.getElementById('burgermenu').style.left = '-300px';
+        burgerDeployed = false;
+    } else {
+        document.getElementById('burgermenu').style.left = '0';
+        burgerDeployed = true;
+    }
+}
+
+document.getElementById('burger').addEventListener("click", function() {
+    deployBurger();
+});

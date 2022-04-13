@@ -101,6 +101,20 @@ header{
     vertical-align: bottom;
 }
 
+#grid{
+	display: inline-grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#grid:first-child{
+	grid-columns: 2;
+}
+
+#grid img{
+	height: auto;
+	width: 100px;
+}
+
 header nav ul{
     margin: 0;
     padding: 0;

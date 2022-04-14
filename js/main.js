@@ -52,7 +52,7 @@ function constructSections(nameId) {
         li.appendChild(a);
         if (!selectionVerified && page == nameId) {
             title = name;
-            li.setAttribute("class", selected);
+            li.setAttribute("class", 'selected');
             selectionVerified = true;
 			if (i > 0) {
                 previousPage = '?page=' + nameId + '&section=' + elements[i - 1];

@@ -1,0 +1,36 @@
+<h1>Keys</h1>
+
+<h2>Which item can be a key ?</h2>
+<p>Any item. By default, the key is the wooden stick. When the item is affected as a key, there are special tags applied
+to it. You can define mutliple items and durabilities as keys in the config file. If you want to make the item
+unobtainable or apply a special texture to it, it is explained in the last sections below.</p>
+
+<h2>Generating a key</h2>
+<p>The key you want to generate has to be linked to a lock, like in real life. The lock has to be yours.
+Once you have an item that can be a key in the main hand, type this command with the name of the desired lock :</p>
+<code>/k new key &lt;name&gt;</code>
+<p>Then you can create other keys for the same lock, and keep them for yourself or give them to your friends.
+In case you don't trust a friend anymore, you can change the lock : first remove the lock from the block,
+and then add a new one :</p>
+<code>
+	<pre>
+		/k remove &lt;old name&gt;
+		/k add &lt;new name&gt;
+	</pre>
+</code>
+
+<h2>The Master Key</h2>
+<p>Server operators and allowed players can generate a master key to access any kind of locked blocks :</p>
+<code>/k master</code>
+
+<h2>Add a description</h2>
+<p>If you have hundred different keys, it may be difficult to pick the right one. You may add a description for
+each key, and maybe keep the keys in different groups by placing them in bags (version 1.17+).</p>
+<code>/k editkey &lt;line&gt; &lt;description&gt;</code>
+<p>You can add up to 4 lines of description in the lore of the key.</p>
+
+<h2>Make the key item unobtainable for players</h2>
+<p>Comming soon</p>
+
+<h2>Apply a custom texture to the keys</h2>
+<p>Comming soon<</p>

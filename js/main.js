@@ -6,8 +6,8 @@ let documentationHomePage = page == "documentation";
 let selectionVerified = page == null || documentationHomePage;
 let title = 'Welcome';
 const isDocumentation = page != null;
-let sectionNumber = 0;
-let sectionSize = 0;
+let previousPage;
+let nextPage;
 
 const sections = {
     awesomekeys: [
@@ -17,7 +17,8 @@ const sections = {
         "keys",
         "commands",
         "permissions",
-        "translation",
+		"logs",
+        "language",
         "source_code"
     ]
 }
@@ -53,6 +54,12 @@ function constructSections(nameId) {
             title = name;
             li.setAttribute("class", selected);
             selectionVerified = true;
+			if (i > 0) {
+                previousPage = '?page=' + nameId + '&section=' + elements[i - 1];
+            }
+            if (i < elements.length - 1) {
+                nextPage = '?page=' + nameId + '&section=' + elements[i + 1];
+            }
         }
         ul.appendChild(li);
     }
@@ -83,16 +90,26 @@ for (let i = 0; i < parentSections.length; i++) {
 }
 
 if (isDocumentation) {
-	let upperpart = '<div id="upperpart"><p>Documentation</p><div id="pages">';
-	if (sectionNumber > 0) {
-		upperpart += '<a href="">&lt; previous</a>';
+	document.getElementById('main').innerHTML =
+		'<div id="upperpart"><p>Documentation</p><div id="pages"></div></div><div id="content"></div>';
+	if (!documentationHomePage) {
+		if (typeof previous != 'undefined') {
+		    let previousA = document.createElement('a');
+		    previousA.href = previousPage;
+		    previousA.innerHTML = '>&lt; previous';
+		    document.getElementById('pages').appendChild(previousA);
+		}
+
+		if (typeof next != 'undefined') {
+		    let nextA = document.createElement('a');
+		    nextA.href = nextPage;
+		    nextA.innerHTML = 'next &gt;';
+		    document.getElementById('pages').appendChild(nextA);
+		}
 	}
-	if (sectionNumber < sectionSize) {
-		upperpart += '<a href="">next &gt;</a>';
-	}
-	document.getElementById('main').innerHTML = upperpart + '</div></div>';
 } else {
 	document.body.style.backgroundColor = '#7596cc';
+	document.getElementById('main').style.textAlign = 'center';
 }
 
 const fileName = 'https://lucratiff.github.io/resources/' +

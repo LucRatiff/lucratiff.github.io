@@ -1,0 +1,99 @@
+<h1>Configuaration</h1>
+<p>AwesomeKeys is deeply customizable through its configuration file.</p>
+
+<h2>The configuration file</h2>
+<p>The file is named "config.json" and is placed in the plugin data folder "plugins/AwesomeKeys".
+If you never edited a json file, you can refer to this page (optionnal) :
+<a href="https://fr.wikipedia.org/wiki/JavaScript_Object_Notation">Wikipedia:JavaScript_Object_Notation</a></p>
+<p>If you have a problem with the configuration file, you can delete it, and it will be generated from default.</p>
+
+<h2>The fields</h2>
+<h3>keys</h3>
+<code>
+	<pre>
+		"keys": [
+			{
+				"item": 280,
+				"durability": [ ]
+			}
+		],
+	</pre>
+</code>
+<p>Defines the items that could be used as keys</p>
+<p><strong>item</strong>: You can use either id numeric value or 1.13+ flattening text value (use quotes)</p>
+<p><strong>durability</strong>: None, one or mutliple durability/data values, separated by a comma</p>
+<p>If you want to add multiple items, copy and paste this block as follows, and add a comma in between :</p>
+<img src="" alt="" />
+
+<h3>language</h3>
+<code>"language": "en",</code>
+<p>The language wich will be loaded by the plugin. Please refer to <a href="?page=awesomekeys&section=language">Language</a></p>
+
+<h3>alias-command-key</h3>
+<code>"alias-command-key": "k",</code>
+<p>Alias for command /key, default is /k</p>
+
+<h3>enable-logs</h3>
+<code>"enable-logs": true,</code>
+<p>If logs are enabled, they track all interactions with locked blocks : creation, removal, access, destruction, etc.
+You can then consult them and filter them as mentionned in <a href="?page=awesomekeys&section=logs"</p>
+
+<h3>buffer-duration</h3>
+<code>"buffer-duration": 20,</code>
+<p>The maximum amount of time in seconds some objects are buffering. Don't change it except if your server has too few memory</p>
+
+<h3>deny-crafting-key-exact-items</h3>
+<code>"deny-crafting-key-exact-items": false,</code>
+<p>By default, players are allowed to craft the exact item (excluding tags). In any situation, it won't be a key, because of tags.</p>
+
+<h3>deny-crafting-key-item-types</h3>
+<code>"deny-crafting-key-item-types": false,</code>
+<p>Deny crafting items that have the same type, regardless the durability/data value</p>
+
+<h3>deny-receiving-key-exact-items</h3>
+<code>"deny-receiving-key-exact-items": false,</code>
+<p>receiving includes mob loot and NPC exchange.</p>
+<p><strong>Important:</strong> Don't set it to true if you have custom NPCs that give keys to players</p>
+
+<h3>deny-receiving-key-item-types</h3>
+<code>"deny-receiving-key-item-types": false,</code>
+<p>Same thing, regarless the durability/data value</p>
+
+<h3>deny-renaming-key-items</h3>
+<code>"deny-renaming-key-items": true,</code>
+<p>By default, players cannot rename their keys ; they can only edit the description. Renaming a key don't change its functionning</p>
+
+<h3>per-player-containers-limitation</h3>
+<code>"per-player-containers-limitation": 0,</code>
+<p>The maximum amount of containers a player can lock. 0 is limitless</p>
+
+<h3>per-player-doors-limitation</h3>
+<code>"per-player-doors-limitation": 0,</code>
+<p>The maximum amount of doors and fence gates a player can lock. 0 is limitless</p>
+
+<h3>per-player-locks-limitation</h3>
+<code>"per-player-locks-limitation": 500,</code>
+<p>The maximum amount of locks a player can define. 500 is enough to avoid disk space spam</p>
+
+<h3>enable-*</h3>
+<code>
+	<pre>
+		"enable-wooden-doors": true,
+		"enable-iron-doors": true,
+		"enable-fence-gates": true,
+		"enable-chests": true,
+		"enable-trapped-chests": true,
+		"enable-shulkers": true,
+		"enable-other-containers": false,
+	</pre>
+</code>
+<p>Enable or disable each kind of block that can be locked. By default, only the containers
+ that are chest (normal and trapped, simple and double) and shulkerbox can have a lock.</p>
+
+<h3>enable-particles</h3>
+<code>"enable-particles": true,</code>
+<p>Modify it only if your server has severe performance issues</p>
+
+<h3>bypass-protection</h3>
+<code>"bypass-protection": true</code>
+<p>By default, players can access a locked block with the propper key, even if the access is restrected by a protection plugin</p>

@@ -1,0 +1,46 @@
+<h1>Locks</h1>
+<p>There are two types of locks : classic locks and codes. Classic locks need a key to be opened,
+and codes are 9 digit codes composed from a special 3x3 inventory.</p>
+
+<h2>Define a new lock</h2>
+<p>In order to add a lock to a block, you have to define first a lock. Consider it as making a model of the lock
+before forging locks based on the plan. That lock will have a name and a uuid (unique identifier). Keep the name
+of your lock in order to make keys.</p>
+<code>/k new lock &lt;name&gt;</code>
+<p>To create new keys, please refer to the <a href="?page=awesomekeys&section=keys">keys section</a></p>
+
+<h2>Add a lock to a block</h2>
+<p>By default, there is no limit in the amount of blocks that you can lock. To lock a new bloc, select it with
+your cursor and then type the command for a classic lock :</p>
+<code>/k add lock &lt;name&gt;</code>
+<p>By default, anyone who has the propper key can access the locked block, even if without the lock, the block
+couldn't be accessed due to a protection plugin. It can be changed in the config file.</p>
+<p>You can also add a code lock :</p>
+<code>/k add code</code>
+<p>You'll be invited to enter a code on a 3x3 inventory. You can enter up to 12 digits by default. Keep safe your code.</p>
+
+<h2>Remove a lock</h2>
+<p>To remove a lock from a block you locked, select it with your cursor and type this command :</p>
+<code>/k remove</code>
+<p>The lock has to be yours. Note that if the block is broken, the lock is also removed, even if you place the
+same block at the same location.</p>
+
+<h2>Add a greeting message</h2>
+<p>You can add a colorful greeting message to all your locks ! It works only for doors and fence gates (containers
+inventories would hide the message). Type this command :</p>
+<code>/k greeting &lt;color code&gt; &lt;message&gt;</code>
+<p>The color code has to be one the following : 0123456789abcdef ; wich represent
+<a href="https://minecraft.fandom.com/wiki/Formatting_codes">Minecraft color code</a>.</p>
+<p>Note that if you use a resource pack with smaller fonts, some players might lose the end of the message if
+you entered too many characters (like signs).</p>
+
+<h2>Shulkerboxes</h2>
+<p>If you add a lock to a shulker, it won't be removed on block break. It keeps the lock uuid in its lore.</p>
+
+<h2>Protection management</h2>
+<p>The protection from the destruction is not handled by this plugin. In order to do that, you have to use a
+protection plugin like WorldGuarg or GriefPrevention.</p>
+<p>You can choose in the config file wether if the protection is consulted or not when accessing a locked block
+("bypassprotection" field). For example, if "bypassprotection" is set to false, AwesomeKeys won't consider the protection.
+If true, the player that is trying to access the block with the propper key has to have the permission to
+access it in a normal way.</p>

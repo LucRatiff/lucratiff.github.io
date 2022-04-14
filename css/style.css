@@ -101,20 +101,6 @@ header{
     vertical-align: bottom;
 }
 
-#grid{
-	display: inline-grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-#grid:first-child{
-	grid-columns: 2;
-}
-
-#grid img{
-	height: auto;
-	width: 100px;
-}
-
 header nav ul{
     margin: 0;
     padding: 0;
@@ -157,6 +143,43 @@ header nav a:visited{
     position: relative;
     margin: 120px 20px 0 310px;
     max-width: 800px;
+}
+
+#grid{
+	display: inline-grid;
+	grid-template-columns: repeat(2, 250px);
+	grid-gap: 20px;
+}
+
+#grid a, #grid a:visited{
+	color: white;
+}
+
+#documentation{
+	grid-column: 1 / 3;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#grid a{
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 6px;
+	padding: 20px;
+	height: 60px;
+	box-shadow: 5px 5px 5px black;
+	line-height: 60px;
+	background: #2d4161;
+}
+
+#grid a:hover{
+	transform: translate(4px, 4px);
+	box-shadow: 2px 2px 2px black;
+	transition: all 0.1s ease-in-out;
+}
+
+#grid img{
+	vertical-align: middle;
 }
 
 #upperpart{

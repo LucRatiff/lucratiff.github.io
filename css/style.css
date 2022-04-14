@@ -237,8 +237,14 @@ h1{
 }
 
 h2{
-    font-size: 30px;
+	border-bottom: 1px solid #2d4161;
+	font-size: 30px;
     color: #606060;
+}
+
+h3{
+	font-size: 20px;
+	font-weight: bold;
 }
 
 p{

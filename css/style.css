@@ -237,6 +237,7 @@ h1{
 }
 
 h2{
+	display: inline-block;
 	border-bottom: 1px solid #2d4161;
 	font-size: 30px;
     color: #606060;

@@ -1,6 +1,6 @@
 const url = new URL(window.location.href);
 const params = url.searchParams;
-const page = params.get('page');
+let page = params.get('page');
 const sectionPage = params.get('section');
 let documentationHomePage = page == "documentation";
 const isDocumentation = page != null;

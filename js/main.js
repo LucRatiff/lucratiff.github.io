@@ -17,7 +17,7 @@ const sections = {
         "keys",
         "commands",
         "permissions",
-		"logs",
+        "logs",
         "language",
         "source_code"
     ]
@@ -71,7 +71,7 @@ function constructSections(projectName) {
             title = name;
             li.setAttribute("class", 'selected');
             selectionVerified = true;
-			if (i > 0) {
+            if (i > 0) {
                 previousPage = '?page=' + page + '&section=' + elements[i - 1];
             }
             if (i < elements.length - 1) {

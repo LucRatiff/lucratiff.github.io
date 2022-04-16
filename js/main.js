@@ -3,11 +3,11 @@ const params = url.searchParams;
 const page = params.get('page');
 const sectionPage = params.get('section');
 let documentationHomePage = page == "documentation";
-let selectionVerified = page == null || documentationHomePage;
-let title = 'Welcome';
 const isDocumentation = page != null;
-let previousPage;
-let nextPage;
+let selectionVerified = !isDocumentation || documentationHomePage;
+let title = 'Welcome';
+let previousPage = null;
+let nextPage = null;
 
 const sections = {
     awesomekeys: [
@@ -23,42 +23,59 @@ const sections = {
     ]
 }
 
-let selectionId = null;
+if (isDocumentation) {
+	page = page.toLowerCase();
+	if (typeof sections[page] == 'undefined') {
+		page = 'documentation';
+		documentationHomePage = true;
+	}
+}
 
-function deploySections(nameId) {
+if (sectionPage == null && isDocumentation && !documentationHomePage) {
+    sectionPage = sections[page][0];
+}
+
+if (isDocumentation && !documentationHomePage) {
+	deploySections(page);
+}
+
+document.getElementsByTagName('title').innerHTML = title;
+
+let selectionId = null;
+function deploySections(projectName) {
     if (selectionId != null) {
         document.getElementById(selectionId).nextSibling.remove();
     }
 
-    if (selectionId == nameId) {
+    if (selectionId == projectName) {
         selectionId = null;
     } else {
-        selectionId = nameId;
+        selectionId = projectName;
         document.getElementById(selectionId).after(
-            constructSections(nameId)
+            constructSections(projectName);
         );
     }
 }
 
-function constructSections(nameId) {
+function constructSections(projectName) {
     let ul = document.createElement("ul");
-    let elements = sections[nameId];
+    let elements = sections[projectName];
     for (let i = 0; i < elements.length; i++) {
         let li = document.createElement("li");
         let a = document.createElement("a");
-        a.setAttribute('href', '?page=' + nameId + '&section=' + elements[i]);
+        a.setAttribute('href', '?page=' + page + '&section=' + elements[i]);
         let name = elements[i].charAt(0).toUpperCase() + elements[i].slice(1).replace('_', ' ');
         a.innerHTML = name;
         li.appendChild(a);
-        if (!selectionVerified && page == nameId) {
+        if (!selectionVerified && projectName == page && sectionPage == elements[i]) { //TODO
             title = name;
             li.setAttribute("class", 'selected');
             selectionVerified = true;
 			if (i > 0) {
-                previousPage = '?page=' + nameId + '&section=' + elements[i - 1];
+                previousPage = '?page=' + page + '&section=' + elements[i - 1];
             }
             if (i < elements.length - 1) {
-                nextPage = '?page=' + nameId + '&section=' + elements[i + 1];
+                nextPage = '?page=' + page + '&section=' + elements[i + 1];
             }
         }
         ul.appendChild(li);
@@ -67,25 +84,11 @@ function constructSections(nameId) {
     return ul;
 }
 
-if (sectionPage == null) {
-    let s = sections[page];
-    if (s != undefined) {
-        sectionPage = s[0];
-    }
-}
-
-if (isDocumentation && !documentationHomePage) {
-    try {
-        deploySections(page);
-        document.getElementsByTagName('title').innerHTML = title;
-    } catch(e) {}
-}
-
-const parentSections = document.getElementsByClassName("category");
-for (let i = 0; i < parentSections.length; i++) {
-    parentSections[i].addEventListener("click", function() {
-        let nameId = parentSections[i].id;
-        deploySections(nameId);
+const projects = document.getElementsByClassName("category");
+for (let i = 0; i < projects.length; i++) {
+    projects[i].addEventListener("click", function() {
+        let projectName = projects[i].id;
+        deploySections(projectName);
     });
 }
 
@@ -93,16 +96,16 @@ if (isDocumentation) {
 	document.getElementById('main').innerHTML =
 		'<div id="upperpart"><p>Documentation</p><div id="pages"></div></div><div id="content"></div>';
 	if (!documentationHomePage) {
-		if (typeof previous != 'undefined') {
+		if (previousPage != null) {
 		    let previousA = document.createElement('a');
-		    previousA.href = previousPage;
-		    previousA.innerHTML = '>&lt; previous';
+		    previousA.setAttribute('href', previousPage);
+		    previousA.innerHTML = '&lt; previous';
 		    document.getElementById('pages').appendChild(previousA);
 		}
 
-		if (typeof next != 'undefined') {
+		if (nextPage != null) {
 		    let nextA = document.createElement('a');
-		    nextA.href = nextPage;
+		    nextA.setAttribute('href', nextPage);
 		    nextA.innerHTML = 'next &gt;';
 		    document.getElementById('pages').appendChild(nextA);
 		}
@@ -113,7 +116,7 @@ if (isDocumentation) {
 }
 
 const fileName = 'https://lucratiff.github.io/resources/' +
-	(page == null ? 'home' :  page + (documentationHomePage ? '' : '/' + sectionPage)) + '.html';
+	(isDocumentation ? page + (documentationHomePage ? '' : '/' + sectionPage) : 'home') + '.html';
 const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if(request.readyState === 4 && (request.status === 200 || request.status == 0)) {

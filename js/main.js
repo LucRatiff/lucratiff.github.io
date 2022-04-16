@@ -52,7 +52,7 @@ function deploySections(projectName) {
     } else {
         selectionId = projectName;
         document.getElementById(selectionId).after(
-            constructSections(projectName);
+            constructSections(projectName)
         );
     }
 }

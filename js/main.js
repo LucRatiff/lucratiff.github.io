@@ -35,13 +35,14 @@ if (sectionPage == null && isDocumentation && !documentationHomePage) {
     sectionPage = sections[page][0];
 }
 
+let selectionId = null;
+
 if (isDocumentation && !documentationHomePage) {
     deploySections(page);
 }
 
 document.getElementsByTagName('title').innerHTML = title;
 
-let selectionId = null;
 function deploySections(projectName) {
     if (selectionId != null) {
         document.getElementById(selectionId).nextSibling.remove();
@@ -63,7 +64,7 @@ function constructSections(projectName) {
     for (let i = 0; i < elements.length; i++) {
         let li = document.createElement("li");
         let a = document.createElement("a");
-        a.setAttribute('href', '?page=' + page + '&section=' + elements[i]);
+        a.setAttribute('href', '?page=' + projectName + '&section=' + elements[i]);
         let name = elements[i].charAt(0).toUpperCase() + elements[i].slice(1).replace('_', ' ');
         a.innerHTML = name;
         li.appendChild(a);

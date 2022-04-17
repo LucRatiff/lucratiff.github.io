@@ -67,10 +67,9 @@ function constructSections(projectName) {
         a.setAttribute('href', '?page=' + projectName + '&section=' + elements[i]);
         let name = elements[i].charAt(0).toUpperCase() + elements[i].slice(1).replace('_', ' ');
         a.innerHTML = name;
-        li.appendChild(a);
         if (!selectionVerified && projectName == page && sectionPage == elements[i]) { //TODO
             title = name;
-            li.setAttribute("class", 'selected');
+            a.setAttribute("class", 'selected');
             selectionVerified = true;
             if (i > 0) {
                 previousPage = '?page=' + page + '&section=' + elements[i - 1];
@@ -79,6 +78,7 @@ function constructSections(projectName) {
                 nextPage = '?page=' + page + '&section=' + elements[i + 1];
             }
         }
+        li.appendChild(a);
         ul.appendChild(li);
     }
 

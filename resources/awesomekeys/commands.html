@@ -1,1 +1,46 @@
 <h1>Commands</h1>
+
+<h2>General commands</h2>
+
+<h3>/k new lock &lt;lock name&gt;</h3>
+<p>Define a new lock. The name has to be kept safe to create keys.</p>
+
+<h3>/k new key &lt;lock name&gt;</h3>
+<p>Create a new key for the specified lock.</p>
+
+<h3>/k add lock &lt;lock name&gt;</h3>
+<p>Add a lock to a targeted lockable block. The lock has to be defined first.</p>
+
+<h3>/k add code</h3>
+<p>Add a code to a targeted lockable block, instead of classic lock. No key needed to access it then, just a code.</p>
+
+<h3>/k remove</h3>
+<p>Remove a lock from the targeted block. Breaking the block also removes the lock.</p>
+
+<h3>/k greeting none|&lt;color code&gt; &lt;greeting message&gt;</h3>
+<p>Add a greeting message to a block you locked. It will be displayed each time a player is accessing it.
+Only works for doors and fence gates.<br />
+Color code is a Minecraft color code character among the following : 0123456789abcdef<br />
+Just type "none" to remove the message.</p>
+
+<h3>/k &lt;editkey line&gt; &lt;description&gt;</h3>
+<p>Add a description to the key. The description length cannot exceed 50 characters for each line, and there can be up to 4 lines
+of description.</p>
+
+<h2>OP and staff commands</h2>
+
+<h3>/k master</h3>
+<p>Create a master key, which can unlock any block.</p>
+
+<h3>/k logs &lt;filters&gt; (&gt; &lt;file&gt;)</h3>
+<p>Print logs to a file or to the chat. Please refer to the <a href="?page=awesomekeys&section=logs">logs section</a>.</p>
+
+<h3>/k purge unlinked|all|player (&lt;player&gt;)</h3>
+<p>Purge some files that could have become useless.<br />
+- unlinked : if you deleted locked blocks with a plugin (eg. WorlEdit), AwesomeKeys has no way to know it ;
+it may result as lock files linked to nothing ; you can purge them easily if you think there are some<br />
+- all : purge all AwesomeKeys, except configuration and languagew<br />
+- player : purge all files related to the specified player ; if a player is banned, the plugin keeps all files related to him</p>
+
+<h3>/akverifylang &lt;lang&gt; (&lt;page&gt;)</h3>
+<p>You can see easily how the messages are displayed with the language selected. The language has to be installed.</p>

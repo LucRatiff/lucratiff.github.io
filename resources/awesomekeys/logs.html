@@ -1,1 +1,33 @@
 <h1>Logs</h1>
+<p>AwesomeKeys registers logs whenever a locked block is accessed. If you want to control what kind
+of logs are registered, please refer to the <a href="?page=awesomekeys&section=configuration">configuration section</a>.</p>
+
+<h2>Print logs</h2>
+<p>You can print the logs to a file or to the chat via a private message. In order to do that, you need the permissions
+"awesomekeys.logs.print" and "awesomekeys.logs.read".</p>
+<p>The command is as follows :</p>
+<code>/k logs &lt;filters&gt; (&gt; &lt;file&gt;)</code>
+<p>The file, if spectified, will be created in the data folder (plugins/AwesomeKeys)</p>
+
+<h2>Filters</h2>
+<p>You have to add at least one filter, and then add others filters right after, all seperated by spaces.</p>
+
+<h3>target</h3>
+<p>Print logs of the targeted block, the one you are selecting with the pointer.</p>
+
+<h3>block &lt;world&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;</h3>
+<p>The block which is in those exact coordinates.</p>
+
+<h3>group [chunk]|[world (&lt;name&gt;)]|[all]</h3>
+<p>There are three possible groups :<br />
+- chunk, which is the chunk of your current position ;<br />
+- world, the world of your position, or the world spectified in &lt;name&gt; ;<br />
+- all, all worlds</p>
+
+<h3>player &lt;name|uuid&gt;</h3>
+<p>A player, by its name or its uuid.</p>
+
+<h3>from &lt;dd/mm/yy,hh(:mm(:ss))&gt;|beginning to &lt;date&gt;|now</h3>
+<p>The time filter. For example, if you want logs from the beginning to 01/01/2022 at 9:30 pm of a targeted block,
+and print it to logs.txt :</p>
+<code>/k logs target from beginning to 01/01/2022,21:30 &gt; logs.txt</code>

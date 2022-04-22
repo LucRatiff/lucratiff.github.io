@@ -24,7 +24,6 @@ const sections = {
 }
 
 if (isDocumentation) {
-    page = page.toLowerCase();
     if (typeof sections[page] == 'undefined') {
         page = 'documentation';
         documentationHomePage = true;

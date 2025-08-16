@@ -1,0 +1,71 @@
+#auth-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+#auth-modal h2{
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#auth-modal form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    border-bottom: 2px solid darkgray;
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+#auth-modal form div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+#auth-modal input:not([type=submit]){
+    height: 30px;
+}
+
+#auth-submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#auth-modal input[type=submit]{
+    border-radius: 6px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--green) var(--gradient);
+    cursor: pointer;
+}
+
+#auth-modal input[type=submit]:hover{
+    text-shadow: var(--text-shadow);
+}
+
+#auth-modal-change{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+#auth-modal-change p{
+    text-align: center;
+    font-style: italic;
+}
+
+#change-button{
+    padding: 10px 20px;
+    color: #fff;
+    background: var(--blue) var(--gradient);
+}

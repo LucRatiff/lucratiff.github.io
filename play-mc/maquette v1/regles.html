@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Play-mc : le serveur vanilla</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enfin un serveur Minecraft en survie vanilla ! Des protections simples, sans modification du gameplay, et 100% gratuit">
+  <meta property="og:title" content="Play-mc : le serveur vanilla">
+  <meta property="og:description" content="Play-mc.fr est un serveur Minecraft vanilla">
+  <meta property="og:image" content="res/icons/logo.png">
+  <meta property="og:site_name" content="Play-mc.fr">
+  <link rel="icon" href="res/icons/icon-16.png" sizes="16x16">
+  <link rel="icon" href="res/icons/icon-32.png" sizes="32x32">
+  <link rel="icon" href="res/icons/icon-48.png" sizes="48x48">
+  <link rel="icon" href="res/icons/icon-64.png" sizes="64x64">
+  <link rel="icon" href="res/icons/icon-180.png" sizes="180x180">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/article.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="header-top">
+  <div>
+    <a id="home" href="index.html"><img src="res/logo.png" alt="logo"></a>
+  </div>
+  <div id="right-header">
+    <div>
+      <a href="https://discord.com" class="discord-button">
+        <img src="res/icons/discord.svg" alt="discord"><p>Discord</p>
+      </a>
+    </div>
+    <div id="right-buttons-header">
+      <div id="auth" class="button">Connexion / Inscription</div>
+      <div id="ip-header">
+        <div class="ip">
+          <div class="ip-adress">IP: play-mc.fr<div class="ip-triangle-left"></div><div class="ip-triangle-right"></div></div>
+          <div class="ip-click">cliquer pour copier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="burger-menu">
+    <div></div><div></div><div></div>
+  </div>
+</header>
+
+<header id="header-menu">
+  <ul id="top-menu">
+    <li><a href="index.html" class="top-menu-element">Accueil</a></li>
+    <li><a href="forum.html" class="top-menu-element">Forum</a></li>
+    <li><a href="guide.html" class="top-menu-element">Guide</a></li>
+    <li><a href="regles.html" class="top-menu-element">Règles</a></li>
+    <li><a href="videos.html" class="top-menu-element">Vidéos</a></li>
+    <li>
+      <div class="expand-menu top-menu-element">Cartes<span class="arrow"></span>
+        <div class="expand-menu-links">
+          <a href="">Monde Survie</a>
+          <a href="">Monde Créatif</a>
+        </div>
+        <div class="expand-menu-direction"></div>
+      </div>
+    </li>
+    <li><a href="wiki.html" class="top-menu-element">Wiki</a></li>
+  </ul>
+</header>
+
+<header id="header-mobile-menu">
+  <ul id="mobile-menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="forum.html">Forum</a></li>
+    <li><a href="guide.html">Guide</a></li>
+    <li><a href="regles.html">Règles</a></li>
+    <li><a href="videos.html">Vidéos</a></li>
+    <li><a href="videos.html">Carte Survie</a></li>
+    <li><a href="videos.html">Carte Créatif</a></li>
+    <li><a href="wiki.html">Wiki</a></li>
+    <div id="mobile-menu-arrow"><div class="arrow"></div></div>
+  </ul>
+</header>
+
+<div id="principal">
+  <div id="principal-center">
+    <main class="frame">
+      <h2 class="section-title"><a href="index.html" >Accueil</a> &gt; <a href="">Règles</a></h2>
+      <div id="main-content" class="section-content">
+        <h2>Règles</h2>
+        <ol class="fancy-list">
+          <li><p>Il est interdit d'utiliser le chat principal ou les messages privés pour y diffuser des messages grossiers, vulgaires, sciemment faux, abusifs, haineux, misogynes ou homophobes.
+          </p></li>
+          <li><p>Les systèmes de communication ne doivent pas être utilisés pour du spam, flood (même dans le but de résoudre un éventuel problème), troll, ou pour lancer des débats inutiles. De même, le spoil sera très sévèrement puni.
+          </p></li>
+          <li><p>Merci d'essayer au maximum de converser dans un français correct.
+          </p></li>
+          <li><p>Toute triche et/ou comportement visant à tromper le serveur ou des joueurs est interdit.
+            (Vous pouvez vous référer à ce <a href="">topic</a> pour les mods autorisés/interdits)
+          </p></li>
+          <li><p>La création de système “anti-AFK” est proscrite.
+          </p></li>
+          <li><p>Les boucles infinies utilisant la redstone sont interdites. Tout système d’automatisation est interdit, cependant certaines constructions de petite taille sont tolérées.
+          </p></li>
+          <li><p>Toute ferme ou salle à mobs est interdite. L’aménagement de spawners est autorisé. Certaines fermes spéciales uniques mises à la disposition de tout le monde sont tolérées (sorcières, gardiens, endermen).
+          </p></li>
+          <li><p>Respectez le paysage. Les constructions peu esthétiques telles que des tours de cobblestone seront détruites. Les arbres doivent être entièrement coupés, pensez à les replanter ! Le grief (ou vandalisme, c’est-à-dire dégrader une structure de façon volontaire) des constructions publiques est interdit.
+          </p></li>
+          <li><p>Afin d’éviter les lags, vous êtes limités à 16 animaux de chaque espèce sur l'ensemble de vos terrains personnels/claims (chevaux, ânes et mules étant considérés comme une même espèce) mais aussi à une proportion de 200 coffres simples par chunk pour une zone isolée et 50 coffres simples par chunk pour une zone commerciale.
+            <a href="https://play-mc.fr/forum/d/2033-ajout-a-la-regle-9">Plus d'infos sur la partie liée aux coffres</a>
+          </p></li>
+          <li>
+            <div class="fancy-list-multiple-content">
+              <p>Le terrain (claim) d’un joueur absent peut être libéré (déclaim) par un super-modérateur. Les délais pour obtenir un déclaim sont les suivants :</p>
+              <ul class="list">
+                <li>claim vide -> 30 jours ;</li>
+                <li><a href="https://play-mc.fr/forum/t/demandes-de-d-claim">déclaim pour projet après demande via le forum</a> -> 60 jours ;</li>
+                <li>declaim sans projet spécifique -> 100 jours.</li>
+              </ul>
+              <p>L’anti-déclaim, c’est-à-dire le fait de se connecter uniquement pour conserver ses terrains, peut être sanctionné par le déclaim desdits terrains.</p>
+            </div>
+          </li>
+          <li><p>Le pvp est activé dans le monde ressource. Le “spawnkill” est interdit. Le kill d’une personne à répétition peut être puni.</p></li>
+        </ol>
+        <h2>Règles techniques et particularités</h2>
+        <ul class="fancy-list">
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Les systèmes “anti-AFK” sont interdits, la création de fermes à pêche est interdite car elles peuvent être utilisées comme anti-AFK.</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Les boucles de redstone sont interdites. Les blocs détecteurs et les BUD sont autorisés.</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Les systèmes automatisés sont interdits. Certains petits systèmes peuvent être tolérés : une limitation à 6 caractères pour les fermes a été mise en place (ex : dans une ferme à canne à sucre, pas plus de 6 pousses, dans une ferme à poulets, pas plus de 6 poules pondeuses etc.)</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Les systèmes semi-automatisés sont autorisés.</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Toute ferme ou salle à mobs est interdite. Certaines fermes spéciales uniques mises à la disposition de tous les joueurs sont tolérées (sorcières, gardiens, endermen etc.).</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>L’aménagement de spawners est autorisé à condition de respecter les autres règles présentées ici.</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Tout système visant à tuer des entités est interdit.</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Le rassemblement d’entités sur un unique bloc est interdit, mais toutefois autorisé s’il amène sur une zone de plusieurs blocs. (ex : avec de l’eau)</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Un système qui serait susceptible de devenir source de lags peut être interdit. (ex : trieurs dans les salles des coffres ou entités trop nombreuses)</p>
+          </li>
+        </ul>
+        <h2>Informations</h2>
+        <ul class="fancy-list">
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>La fonction "message privé" en jeu, via /m ou /mp, n’exclut pas que vos échanges soient visible par des modérateurs. Ces échanges resteront évidemment privés mais vous pourrez être sanctionné de la même manière que pour des propos désobligeants dans le chat public.</p>
+          </li>
+          <li>
+            <div class="fancy-list-arrow"><div class="rectangle"></div><div class="triangle"></div></div>
+            <p>Les modérateurs possèdent par ailleurs la capacité de se téléporter à vous de manière invisible afin de contrôler votre environnement et le respect de nos règles.</p>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <aside>
+      <div id="aside-arrow"><div class="arrow"></div></div>
+      <section id="section-forum" class="frame">
+        <h2 class="section-title">Dernière activité Forum</h2>
+        <ul class="section-content">
+          <li>
+            <div class="section-forum-topic-infos">
+              <a href="" class="forum-tag" style="background: darkgray;">Contact Staff</a>
+              <a href="index.html" class="section-forum-topic unread">[Acceptée] Demande de deban</a>
+            </div>
+            <a href="" class="section-forum-message">Bonjour @Wasterned_ordi, Ta demande a été acceptée, bon retour parmi nous !</a>
+            <div class="section-forum-details">
+              <span class="section-forum-details-by">Par: </span>
+              <a href="" class="section-forum-details-author">Gringo</a><span>,</span>
+              <span class="section-forum-details-date">le 01/01/2025</span>
+            </div>
+          </li>
+          <li>
+            <div class="section-forum-topic-infos">
+              <a href="" class="forum-tag" style="background: darkgray;">Contact Staff</a>
+              <a href="index.html" class="section-forum-topic unread">[Validé] Dépot de plainte à l’encontre des joueurs : Shadow_Qryst et Link1315</a>
+            </div>
+            <a href="" class="section-forum-message">Bonjour, Nous allons en discuter et revenir vers toi</a>
+            <div class="section-forum-details">
+              <span class="section-forum-details-by">Par: </span>
+              <a href="" class="section-forum-details-author">Pouet_</a><span>,</span>
+              <span class="section-forum-details-date"> le 01/01/2025</span>
+            </div>
+          </li>
+          <li>
+            <div class="section-forum-topic-infos">
+              <a href="" class="forum-tag" style="background: dodgerblue;">Projets et événements</a>
+              <a href="index.html" class="section-forum-topic">PMC WORLD RECORD</a>
+            </div>
+            <a href="" class="section-forum-message">ZuLynx GG ! Tu bas le record de OCLASTAX !</a>
+            <div class="section-forum-details">
+              <span class="section-forum-details-by">Par: </span>
+              <a href="" class="section-forum-details-author">CheveuxBleu</a><span>,</span>
+              <span class="section-forum-details-date"> le 01/01/2025</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section id="section-wiki" class="frame">
+        <h2 class="section-title">Derniers articles Wiki</h2>
+        <ul class="section-content">
+          <li>
+            <a href="">
+              <h3 class="section-wiki-title">Titre article</h3>
+              <p class="section-wiki-intro">Début de l'introduction</p>
+              <div class="section-wiki-category">
+                <span class="section-wiki-category-title">Catégorie: </span>
+                <span class="section-wiki-category-content">Catégorie</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <h3 class="section-wiki-title">Titre article</h3>
+              <p class="section-wiki-intro">Début de l'introduction</p>
+              <div class="section-wiki-category">
+                <span class="section-wiki-category-title">Catégorie: </span>
+                <span class="section-wiki-category-content">Catégorie</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <h3 class="section-wiki-title">Titre article</h3>
+              <p class="section-wiki-intro">Début de l'introduction</p>
+              <div class="section-wiki-category">
+                <span class="section-wiki-category-title">Catégorie: </span>
+                <span class="section-wiki-category-content">Catégorie</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="section-mtx" class="frame">
+        <h2 class="section-title">Notre partenaire mTxServ</h2>
+        <ul class="section-content">
+          <li>
+            <a id="mtxserv-ad" href="https://mtxserv.com/fr" target="_blank" rel="noopener noreferrer">
+              <img src="res/partners/mtx-ad.webp" alt="mtxserv">
+              <p>Louez vos propres serveurs<br> de jeu à petit prix</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div id="partnership">
+    <h2>Nos partenaires</h2>
+    <a href="partenaires.html">
+      <ul>
+        <li><img src="res/partners/mtxserv.webp" alt="mtxserv"></li>
+        <li><img src="res/partners/mc-fr.webp" alt="minecraft-france"></li>
+        <li><img src="res/partners/theelderguardian.webp" alt="theelderguardian"></li>
+        <li><img src="res/partners/gunivers.webp" alt="gunivers"></li>
+        <li><img src="res/partners/syraniix.webp" alt="syraniix"></li>
+      </ul>
+    </a>
+  </div>
+  <div id="bottom-footer">
+    <p id="mojang-disclaimer">Ce site n'est pas affilié à Mojang</p>
+    <div class="horizontal-links">
+      <a href="mentions.html">Mentions légales</a>
+      <a href="partenaires.html">Nos réseaux</a>
+      <a href="partenaires.html">Partenaires</a>
+    </div>
+    <p id="copy">&copy;play-mc.fr</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

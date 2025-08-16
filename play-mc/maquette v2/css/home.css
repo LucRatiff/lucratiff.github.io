@@ -1,0 +1,207 @@
+@font-face{
+    font-family: discord;
+    src: url('../res/ginto_nord.woff');
+}
+
+#principal{
+    position: relative;
+    margin-top: 40px;
+}
+
+#home-main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding-bottom: 40px;
+}
+
+#top-presentation{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(95vh - (var(--top-menu-height) + 150px));
+    min-height: 390px;
+    max-height: 800px;
+}
+
+#presentation-image{
+    display: flex;
+    justify-content: flex-end;
+    animation: slide-up 3s ease forwards;
+}
+
+#presentation-image img{
+    border-radius: 8px;
+    border: 2px solid var(--thin-border);
+    width: auto;
+    min-width: 500px;
+    height: 45%;
+}
+
+.presentation-text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#top-presentation .presentation-text{
+    position: absolute;
+    top: calc(64% - 385px / 2);
+    z-index: 1;
+    width: 64%;
+    max-width: 900px;
+    animation: slide-down 3s forwards;
+}
+
+.presentation-text p{
+    font-size: 30px;
+    color: #fff;
+}
+
+.presentation-text .bullet::before{
+    content: "• ";
+}
+
+.presentation-text h2{
+    font-size: 64px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#top-presentation h2{
+    font-size: 80px;
+    color: var(--blue);
+}
+
+.ip-infos {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    padding: 2px 5px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ip-infos span{
+    border-radius: 6px;
+    border: 2px solid var(--thin-border);
+    padding: 5px;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(min(50vh, 500px));
+    }
+    to {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(max(-30vh, -500px));
+    }
+    to {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+#top-presentation .scroll-arrow{
+    margin: auto;
+}
+
+#following-presentation{
+    display: flex;
+    flex-direction: column;
+    row-gap: 200px;
+}
+
+#following-presentation a{
+    color: var(--blue);
+}
+
+#following-presentation li{
+    display: flex;
+    align-items: flex-start;
+    column-gap: 30px;
+    width: 100%;
+}
+
+#following-presentation li:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+#following-presentation .presentation-text{
+    flex: 1;
+}
+
+#following-presentation figure{
+    flex: 1;
+    height: auto;
+}
+
+#following-presentation img{
+    border-radius: 8px;
+    border: 2px solid var(--thin-border);
+    width: 100%;
+}
+
+.scroll-arrow{
+    color: #fff;
+    margin: auto;
+    z-index: 3;
+}
+
+.scroll-arrow:hover{
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+#last-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    width: 100%;
+    color: #fff;
+}
+
+#last-section li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#last-section h2{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#last-section a{
+    color: #fff;
+}
+
+.discord-button{
+    display: flex;
+    column-gap: 10px;
+    background: var(--discord-blue);
+}
+
+.discord-button svg{
+    height: 20px;
+}
+
+.social-medias{
+    background: var(--green) var(--gradient);
+}
+
+.guide-button{
+    background: var(--blue) var(--gradient);
+}
+

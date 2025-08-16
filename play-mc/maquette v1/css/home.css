@@ -1,0 +1,255 @@
+#main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#mini-logo{
+    border-bottom: 2px solid var(--bleu-clair);
+    margin-bottom: 40px;
+    padding: 0 10px 10px 10px;
+    height: 64px;
+}
+
+#images-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+    padding-top: 20px;
+    font-size: 32px;
+    width: 100%;
+}
+
+.horizontal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.presentation-image{
+    border-radius: 8px;
+    box-shadow: 2px 2px 18px rgba(0,0,0,.5);
+}
+
+.horizontal .presentation-image{
+    max-width: 740px;
+}
+
+.presentation-text-container{
+    position: relative;
+    flex: 1;
+}
+
+.presentation-text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 550px;
+}
+
+.horizontal .presentation-text{
+    position: absolute;
+    top: 40px;
+}
+
+.bullet span::before{
+    content: "• ";
+}
+
+.text-title{
+    font-weight: bold;
+}
+
+.presentation-text p{
+    display: flex;
+}
+
+.presentation-text span{
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 2px 2px 18px rgba(0,0,0,.5);
+}
+
+.text-left .presentation-text{
+    right: -64px;
+}
+
+.text-right .presentation-text{
+    left: -64px;
+}
+
+.text-left p{
+    justify-content: flex-end;
+    transform: rotate(-5deg);
+}
+
+.text-right p{
+    transform: rotate(5deg);
+}
+
+.vertical .presentation-text{
+    width: unset;
+    transform: translateY(64px);
+}
+
+.vertical p{
+    margin: auto;
+}
+
+.vertical .presentation-image{
+    width: 100%;
+}
+
+.separation-line{
+    border-top: 2px solid var(--bleu-clair);
+    width: 80%;
+}
+
+.server-ip-text{
+    font-size: 20px;
+}
+
+.social-medias{
+    color: #fff;
+    background: var(--vert-clair) var(--gradient);
+}
+
+.guide-invitation{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.guide-button{
+    margin-bottom: 20px;
+    color: #fff;
+    background: var(--rouge) var(--gradient);
+}
+
+@keyframes deploy-left {
+    to {
+        transform: translateY(0) rotate(-5deg);
+    }
+}
+
+@keyframes deploy-right {
+    to {
+        transform: translateY(0) rotate(5deg);
+    }
+}
+
+@keyframes deploy-top {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1800px) {
+    .text-left .presentation-text{
+        right: -20%;
+        
+    }
+    .text-right .presentation-text{
+        left: -20%;
+    }
+    .horizontal .presentation-image{
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 1680px) {
+    .text-left .presentation-text{
+        right: -30%;
+
+    }
+    .text-right .presentation-text{
+        left: -30%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .text-left .presentation-text{
+        right: -40%;
+
+    }
+    .text-right .presentation-text{
+        left: -40%;
+    }
+}
+
+@media (max-width: 1500px) {
+    .presentation-text{
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .presentation-text{
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 900px) {
+    #mini-logo{
+        margin-bottom: 10px;
+    }
+    #images-list{
+        row-gap: 20px;
+    }
+    .presentation-text{
+        row-gap: 10px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .presentation-text{
+        row-gap: 5px;
+        font-size: 16px;
+    }
+    .presentation-text span{
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    #main-content{
+        padding: 20px 10px;
+    }
+    .presentation-text{
+        font-size: 14px;
+    }
+    .presentation-text span{
+        padding: 2px 5px;
+    }
+    .text-left .presentation-text{
+        top: 0;
+        left: 0;
+    }
+    .horizontal:first-child .text-left .presentation-text{
+        top: -20px;
+    }
+    .text-right .presentation-text{
+        top: 0;
+        left: -420px;
+    }
+    .text-left p{
+        justify-content: flex-start;
+    }
+    .text-right p{
+        justify-content: flex-end;
+    }
+    .vertical .presentation-text span{
+        text-align: center;
+    }
+}

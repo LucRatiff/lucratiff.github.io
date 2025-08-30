@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="light">
 <head>
     <title>Play-mc : le serveur vanilla</title>
     <meta charset="utf-8">
@@ -15,6 +15,7 @@
     <link rel="icon" href="res/icons/icon-64.png" sizes="64x64">
     <link rel="icon" href="res/icons/icon-180.png" sizes="180x180">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/auth.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,24 +27,25 @@
     <div id="top-section" class="max-width">
         <a id="top-logo" href="index.html"><img src="res/logo.webp" alt="logo"></a>
         <div id="header-right-buttons">
-            <a id="toggle-theme" href="">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <a style="display:none;" id="toggle-theme" href="" data-theme="dark">
+                <svg id="light-theme-toggle" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                      role="img" aria-label="activer le thème clair">
                     <circle cx="12" cy="12" r="4"/>
                     <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
                 </svg>
-                <!-- thème foncé
-                <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="activer le thème sombre">
+                <svg id="dark-theme-toggle" viewBox="0 0 24 24" fill="currentColor"
+                     role="img" aria-label="activer le thème sombre">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
                 </svg>
-                -->
-                <span>Thème clair</span>
+                <span id="theme-title">Thème sombre</span>
             </a>
             <span class="ip">IP: play-mc.fr</span>
-            <span>version: 1.21.4</span>
+            <span>version: 1.21.8</span>
         </div>
     </div>
+</header>
+<header id="second-header">
     <div id="middle-section">
         <nav class="max-width">
             <ul id="top-menu">
@@ -53,8 +55,8 @@
                 <li><a href="regles.html" class="top-menu-element">Règles</a></li>
                 <li><a href="videos.html" class="top-menu-element">Vidéos</a></li>
                 <li class="expand-menu">
-                    <div class="top-menu-element"><span>Cartes</span><span class="arrow"></span></div>
-                    <div class="expand-menu-links">
+                    <div class="top-menu-element" tabindex="0"><span>Cartes</span><span class="arrow"></span></div>
+                    <div class="expand-menu-links" style="display: none;">
                         <a href="">
                             <span>Survie</span>
                             <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -71,16 +73,45 @@
                 </li>
                 <li><a href="wiki.html" class="top-menu-element">Wiki</a></li>
             </ul>
-            <a href="" id="auth" class="button">Connexion / Inscription</a>
+            <div id="mobile-menu-button">
+                <div class="burger-element"></div>
+                <div class="burger-element"></div>
+                <div class="burger-element"></div>
+                <ul id="mobile-menu" style="display: none;">
+                    <li class="selected"><a href="index.html" class="mobile-menu-element">Accueil</a></li>
+                    <li><a href="forum.html" class="mobile-menu-element">Forum</a></li>
+                    <li><a href="guide.html" class="mobile-menu-element">Guide</a></li>
+                    <li><a href="regles.html" class="mobile-menu-element">Règles</a></li>
+                    <li><a href="videos.html" class="mobile-menu-element">Vidéos</a></li>
+                    <li>
+                        <a href="" class="mobile-menu-element">
+                            <span>Carte Survie</span>
+                            <svg aria-hidden="true" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="mobile-menu-element">
+                            <span>Carte Créatif</span>
+                            <svg aria-hidden="true" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="wiki.html" class="mobile-menu-element">Wiki</a></li>
+                </ul>
+            </div>
+            <div id="middle-section-right-buttons">
+                <a href="" id="header-discord">
+                    <svg viewBox="0 0 127.14 96.36"><defs><style>.cls-1{fill:currentColor;}</style></defs><path class="cls-1" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+                    <p>Discord</p>
+                </a>
+                <a href="" id="auth" class="button">Connexion / Inscription</a>
+            </div>
         </nav>
     </div>
-</header>
-<header id="second-header">
-    <div id="bottom-section" class="max-width">
-        <a href="" id="header-discord">
-            <svg viewBox="0 0 127.14 96.36"><defs><style>.cls-1{fill:currentColor;}</style></defs><path class="cls-1" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
-            <p>Rejoignez notre discord !</p>
-        </a>
+    <div id="bottom-section">
     </div>
 </header>
 
@@ -94,10 +125,14 @@
                     <p class="bullet">sans modification du gameplay</p>
                     <p class="bullet">100% gratuit</p>
                     <div class="ip-infos">
-                        <span class="ip">IP: play-mc.fr</span>
-                        <span>version: 1.21.4</span>
-                        <span>java</span>
-                        <span>bedrock</span>
+                        <div class="ip-infos-section">
+                            <span class="ip">IP: play-mc.fr</span>
+                            <span>version: 1.21.4</span>
+                        </div>
+                        <div class="ip-infos-section">
+                            <span>java</span>
+                            <span>bedrock</span>
+                        </div>
                     </div>
                 </div>
                 <figure id="presentation-image">
@@ -121,7 +156,6 @@
                         <h2>Menez votre propre aventure</h2>
                         <p class="bullet">commencez seul ou rejoignez une ville</p>
                         <p class="bullet">donnez un sens à votre aventure</p>
-                        <p class="bullet">enrichissez le serveur de votre histoire</p>
                         <p class="bullet">liez vos comptes <a href="">Java et Bedrock</a></p>
                     </div>
                 </li>
@@ -157,7 +191,7 @@
                     <div class="presentation-text">
                         <h2>Une communauté bouillonnante d'idées</h2>
                         <p class="bullet">du rp dans certaines villes</p>
-                        <p class="bullet">voire des quêtes vanilla</p>
+                        <p class="bullet">des events organisés par les joueurs ou le staff</p>
                         <p class="bullet">et même des guildes</p>
                     </div>
                 </li>
@@ -225,6 +259,7 @@
     </div>
 </footer>
 <script src="js/main.js"></script>
+<script src="js/forms.js"></script>
 <script src="js/auth.js"></script>
 </body>
 </html>

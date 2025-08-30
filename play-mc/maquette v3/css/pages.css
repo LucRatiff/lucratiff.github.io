@@ -1,20 +1,20 @@
-#principal-center{
+#principal-center {
     display: flex;
     column-gap: 20px;
 }
 
-aside{
+aside {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     width: 20%;
 }
 
-.tile{
+.tile {
     background: var(--block-background);
 }
 
-.tile h2{
+.tile h2 {
     position: relative;
     padding: 20px 10px;
     font-size: 20px;
@@ -23,7 +23,7 @@ aside{
     background: var(--title-background);
 }
 
-.tile h2::before{
+.tile h2::before {
     position: absolute;
     bottom: 0;
     width: 20%;

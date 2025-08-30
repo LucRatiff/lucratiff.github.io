@@ -1,0 +1,108 @@
+input:not([type=submit]) {
+    padding-right: 34px;
+    height: 30px;
+    width: 100%;
+}
+
+.input-container:has(.see-pass-button) input {
+    padding-right: 54px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2px;
+    width: 26px;
+    height: 26px;
+    background-size: contain;
+    background-position: center;
+}
+
+.input-container[data-status="wait"]::before {
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top: 3px solid var(--blue);
+    width: 18px;
+    height: 18px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(-50%) rotate(0);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.input-container[data-status="valid"]::before {
+    background-image: url("../res/icons/valid.svg");
+}
+
+.input-container[data-status="error"]::before {
+    background-image: url("../res/icons/error.svg");
+}
+
+.form-error {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--red-error);
+}
+
+.button:disabled {
+    cursor: not-allowed;
+}
+
+.wait::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top: 3px solid #fff;
+    width: 18px;
+    height: 18px;
+    cursor: not-allowed;
+    animation: centeredspin 1s linear infinite;
+}
+
+@keyframes centeredspin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.see-pass-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    background-size: contain;
+    background-position: center;
+}
+
+.dark .see-pass-button {
+    color: var(--block-background);
+}
+
+.see-pass-button svg {
+    height: 100%;
+}
+

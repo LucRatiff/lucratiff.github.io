@@ -1,0 +1,168 @@
+:root {
+    --form-pass-0: red;
+    --form-pass-1: orange;
+    --form-pass-2: #dada33;
+    --form-pass-3: blue;
+    --form-pass-4: green;
+}
+
+#auth-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 20px;
+    width: 272px;
+}
+
+#auth-modal h2 {
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#connection-modes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 100%;
+}
+
+#connection-modes a {
+    display: flex;
+    column-gap: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--normal-text);
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 18px;
+    color: var(--normal-text);
+    background: var(--block-background);
+}
+
+#connection-modes img, #connection-modes svg {
+    height: 20px;
+}
+
+.mode-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+}
+
+#connection-modes a:hover {
+    background: var(--light-gray) var(--gradient);
+}
+
+.dark #connection-modes a:hover {
+    background: var(--blue) var(--gradient);
+}
+
+#auth-modal form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+}
+
+#auth-modal form, #auth-modal #connection-modes {
+    border-bottom: 2px solid darkgray;
+    padding-bottom: 40px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+#auth-submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#auth-modal input[type=submit] {
+    border-radius: 6px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--green) var(--gradient);
+}
+
+#auth-modal input[type=submit]:hover {
+    text-shadow: var(--text-shadow);
+}
+
+#auth-modal-change {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+#auth-modal-change p {
+    text-align: center;
+    font-style: italic;
+}
+
+#change-button {
+    padding: 10px 20px;
+    color: #fff;
+    background: var(--blue) var(--gradient);
+}
+
+.other-auth-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#back-to-connection-modes {
+    color: #fff;
+    background: var(--blue) var(--gradient);
+}
+
+#pass-checker {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+#pass-checker-notation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#pass-checker-levels {
+    display: flex;
+    column-gap: 5px;
+}
+
+#pass-checker-levels div {
+    width: 20px;
+    height: 5px;
+    background: lightgray;
+}
+
+#pass-checker-comment {
+    font-size: 14px;
+    font-style: italic;
+}
+
+#pass-checker-infos {
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    color: #fff;
+    font-weight: bold;
+    background: var(--blue) var(--gradient);
+}
+

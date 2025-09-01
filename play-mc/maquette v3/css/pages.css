@@ -1,33 +1,134 @@
+#principal {
+    background: var(--image-background);
+}
+
+.dark #principal {
+    background: var(--dark-background);
+}
+
+main .tile-content {
+    color: var(--normal-text);
+}
+
 #principal-center {
     display: flex;
     column-gap: 20px;
+    padding: 80px 0;
 }
 
 aside {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    width: 20%;
+    width: 23%;
 }
 
 .tile {
-    background: var(--block-background);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
-.tile h2 {
-    position: relative;
-    padding: 20px 10px;
+.tile-title-section {
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
     font-size: 20px;
     font-weight: bold;
     color: #fff;
-    background: var(--title-background);
+    background: var(--dark-blue);
 }
 
-.tile h2::before {
+.dark .tile-title-section {
+    background: var(--block-background);
+}
+
+.tile-title {
+    position: relative;
+    height: 100%;
+}
+
+.tile-title::before {
     position: absolute;
-    bottom: 0;
-    width: 20%;
+    bottom: -20px;
+    content: "";
+    width: 50px;
     height: 5px;
-    background: var(--blue);
+    background: var(--light-blue);
+}
+
+.tile-content {
+    border-radius: 8px;
+    background: var(--block-background);
+}
+
+aside .tile-content ul {
+    display: flex;
+    flex-direction: column;
+}
+
+aside .tile-content li {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    border-top: 1px solid lightgray;
+    padding: 10px;
+}
+
+aside .tile-content li:first-child {
+    border-top: none;
+}
+
+.aside-forum-title {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.dark .aside-forum-title {
+    color: var(--normal-text);
+}
+
+.aside-forum-title:hover {
+    color: var(--blue);
+}
+
+.aside-forum-message {
+    color: var(--normal-text);
+}
+
+.aside-forum-message:hover {
+    color: var(--blue);
+}
+
+.aside-forum-details {
+    color: var(--normal-text);
+}
+
+.aside-forum-details-author {
+    color: var(--normal-text);
+}
+
+.aside-forum-details-author:hover {
+    color: var(--blue);
+}
+
+.aside-wiki-link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: var(--normal-text);
+}
+
+.aside-wiki-title {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.dark .aside-wiki-title {
+    color: var(--normal-text);
+}
+
+.aside-wiki-link:hover, .aside-wiki-link:hover .aside-wiki-title {
+    color: var(--blue);
 }
 

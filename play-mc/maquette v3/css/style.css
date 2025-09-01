@@ -2,6 +2,7 @@
     --discord-blue: #5865F2;
     --blue: cornflowerblue;
     --light-blue: #90B4F5;
+    --dark-blue: #285CB8;
     --thin-border: rgba(255,255,255,0.11);
     --light-gray: #dddfe1;
     --gradient: linear-gradient(to bottom,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%);
@@ -38,7 +39,7 @@ ul {
     padding: 0;
 }
 
-p, h2, h3 {
+p, h1, h2, h3 {
     all: unset;
 }
 
@@ -177,7 +178,7 @@ header, header a {
     border-top: 1px solid var(--thin-border);
     border-bottom: 1px solid var(--thin-border);
     width: 100%;
-    background: #285CB8;
+    background: var(--dark-blue);
     z-index: 8000;
 }
 
@@ -283,7 +284,7 @@ header, header a {
     flex-direction: column;
     row-gap: 5px;
     padding: 5px 10px;
-    background: #285CB8;
+    background: var(--dark-blue);
 }
 
 .dark .expand-menu-links {

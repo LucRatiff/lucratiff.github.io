@@ -2,8 +2,8 @@
     --form-pass-0: red;
     --form-pass-1: orange;
     --form-pass-2: #dada33;
-    --form-pass-3: blue;
-    --form-pass-4: green;
+    --form-pass-3: var(--blue);
+    --form-pass-4: var(--green);
 }
 
 #auth-modal {
